@@ -1,9 +1,9 @@
 :root {
-    --background-color: #FAF3E0; /* Cream */
-    --text-color: #1C1C1C; /* Near Black */
-    --heading-color: #2C3E50; /* Deep Blue */
+    --background-color: #343434; /* Cream */
+    --text-color: rgb(255, 217, 0); /* Near Black */
+    --heading-color: rgb(224, 224, 224); /* Deep Blue */
     --accent-color: #D4A373; /* Warm Gold */
-    --button-color: #8E3B46; /* Burgundy Red */
+    --button-color: #c9c9c9a3; /* Burgundy Red */
     --button-text-color: white;
 }
 
@@ -12,19 +12,21 @@ body {
 }
 
 h1 {
-    font-family: 'EB Garamond', serif;
+    font-family: 'Roboto Mono', monospace;
     text-align: center;
     color: var(--heading-color);
-    font-size: 50px;
+    font-size: 32px;
+    margin-top: 180px;
 }
 
 #quote {
-    font-family: 'EB Garamond', sans-serif;
-    color: var(--heading-color);
-    text-align: center;
-    margin-top: 100px;
-    font-size: 30px;
-    font-weight: bold;
+    font-family: 'Roboto Mono', monospace;
+    color: var(--button-color);
+    text-align: justify;
+    line-height: 40px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: regular;
 }
 
 button, input {
@@ -32,54 +34,85 @@ button, input {
     margin: auto;
 }
 
-#typed-value { 
-    font-size: 20px;
-    text-align: center;
-    width: 300px;
-    height: 50px;
-    border-color: var(--button-color);
-}
-
-#sub-head {
-    font-family: 'EB Garamond', serif;
-    text-align: center;
-    color: var(--button-color);
-    font-size: 25px;
-    margin-top: -30px;
-}
-
-#start {
-    width: 150px;
-    height: 40px;
-    border: none;
-    color: var(--button-text-color);
-    margin-top: 100px;
-    font-family: 'EB Garamond', serif;
-    font-size: 20px;
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px; /* spacing between elements */
+    max-width: 80%;
+    margin: 20px auto; /* centers the whole block vertically */
 }
 
 #typed-value {
-    display: none;
+    /* display: none; */
+    
+    font-size: 16px;
+    text-align: center;
+    width: 350px;
+    height: 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    outline: none;
+    font-family: 'Roboto Mono', monospace;
+    transition: all 0.2s ease-in-out;
+}
+
+#typed-value:focus {
+    /* box-shadow: 0 0 12px var(--accent-color); */
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+
+#start {
+    width: 120px;
+    height: 40px;
+    border: none;
+    color: var(--button-text-color);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 16px;
 }
 
 button {
-    background-color: var(--button-color);
+    background-color: rgba(255, 255, 255, 0.1);
     align-self: center;
     border-radius: 5px;
+    transition: all 0.1s ease-in-out;
+}
+
+#start:hover {
+    border-color: var(--text-color);
+    color: var(--text-color);
+    transform: scale(1.02);
+}
+
+#start:active {
+    transform: scale(0.95);
 }
 
 p {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto Mono', monospace;
     text-align: center;
-    font-family: 'EB Garamond', serif;
-    font-size: 20px;
+    font-size: 16px;
+    color: var(--heading-color);
+}
+
+b {
+    color: var(--text-color);
+}
+
+.skipped {
+    color: lightcoral;
 }
 
 .highlight {
-    color: var(--button-color);
+    color: var(--text-color);
 }
 
 .error {
     background-color: lightcoral;
-    border: red;
+    border: lightcoral;
 }
